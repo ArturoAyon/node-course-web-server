@@ -18,9 +18,10 @@ fs.appendFile('server.log', log + '\n', (err) => {
     next();
 });
 
-app.use((Req, res, next) => {
+/*app.use((Req, res, next) => {
     res.render('maintenance.hbs');
 });
+*/
 
 //app.use(express.static(__dirname + '/public'));
 //With this, you can 
@@ -57,6 +58,13 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page!',
         welcomeMessage: 'Created by Arturo Ayon'
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Welcome!',
+        welcomeMessage: 'Welcome to our projects!'
     });
 });
 
